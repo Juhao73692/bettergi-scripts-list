@@ -232,8 +232,8 @@ async function readFolder(folderPath, onlyJson) {
                 // 检查当前路径组的 cdtype 是否为空
                 const currentCdType = pathGroupCdType[i - 1] || "";
                 if (!currentCdType) {
-                    log.info(`路径组${i} 的 cdtype 为空，停止处理`);
-                    break;
+                    log.info(`路径组${i} 的 cdtype 为空，跳过`);
+                    continue;
                 }
 
                 const targetFolder = `pathing/路径组${i}`; // 动态生成目标文件夹路径
